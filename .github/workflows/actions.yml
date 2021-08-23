@@ -14,20 +14,16 @@ jobs:
         include:
           - task: Lint
             allow_failures: false
-            command: yarn lint
+            command: cd packages/basic && yarn install && yarn lint
           - task: Test
             allow_failures: false
-            command: yarn test
+            command: cd packages/basic && yarn install && yarn test
     steps:
     - uses: zendesk/checkout@v2
     - name: Use Node.js
       uses: zendesk/setup-node@v2.1.2
       with:
         node-version: '12.x'
-    - name: navigate to correct path
-      run: cd packages/basic
-    - name: install yarn packages
-      run: yarn install
     - name: ${{ matrix.env.TASK }}
       run: TASK=${{ matrix.env.TASK }} ${{ matrix.command }}
   
@@ -39,19 +35,15 @@ jobs:
         include:
           - task: Lint
             allow_failures: false
-            command: yarn lint
+            command: cd packages/basic && yarn install && yarn lint
           - task: Test
             allow_failures: false
-            command: yarn test
+            command: cd packages/basic && yarn install && yarn test
     steps:
     - uses: zendesk/checkout@v2
     - name: Use Node.js
       uses: zendesk/setup-node@v2.1.2
       with:
         node-version: '12.x'
-    - name: navigate to correct path
-      run: cd packages/react
-    - name: install yarn packages
-      run: yarn install
     - name: ${{ matrix.env.TASK }}
       run: TASK=${{ matrix.env.TASK }} ${{ matrix.command }}
