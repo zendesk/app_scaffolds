@@ -6,14 +6,52 @@ on:
     - master
 
 jobs:
-  main:
+  basic:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        include:
+          - task: Lint
+            allow_failures: false
+            command: yarn lint
+          - task: Test
+            allow_failures: false
+            command: yarn test
     steps:
     - uses: zendesk/checkout@v2
     - name: Use Node.js
       uses: zendesk/setup-node@v2.1.2
       with:
         node-version: '12.x'
-    - run: yarn install
-    - run: yarn lint
-    - run: yarn test
+    - name: navigate to correct path
+      run: cd packages/basic
+    - name: install yarn packages
+      run: yarn install
+    - name: ${{ matrix.env.TASK }}
+      run: TASK=${{ matrix.env.TASK }} ${{ matrix.command }}
+  
+  react:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        include:
+          - task: Lint
+            allow_failures: false
+            command: yarn lint
+          - task: Test
+            allow_failures: false
+            command: yarn test
+    steps:
+    - uses: zendesk/checkout@v2
+    - name: Use Node.js
+      uses: zendesk/setup-node@v2.1.2
+      with:
+        node-version: '12.x'
+    - name: navigate to correct path
+      run: cd packages/react
+    - name: install yarn packages
+      run: yarn install
+    - name: ${{ matrix.env.TASK }}
+      run: TASK=${{ matrix.env.TASK }} ${{ matrix.command }}
