@@ -1,0 +1,18 @@
+{
+  "name": "",
+  "author": {
+    "name": "",
+    "email": "",
+    "url": ""
+  },
+  "defaultLocale": "en",
+  "private": true,
+  "location": {
+    "support": {
+      "ticket_sidebar": "assets/iframe.html",
+      "flexible": true
+    }
+  },
+  "version": "1.0.0",
+  "frameworkVersion": "2.0"
+}
