@@ -2,5 +2,9 @@
   "dependencies": {
     "lerna": "^4.0.0"
   },
-  "name": "app_scaffolds"
+  "name": "app_scaffolds",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
 }
