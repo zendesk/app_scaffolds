@@ -21,9 +21,9 @@ jobs:
     steps:
     - uses: zendesk/checkout@v2
     - name: Use Node.js
-      uses: zendesk/setup-node@v2.1.2
+      uses: zendesk/setup-node@v3
       with:
-        node-version: '12.x'
+        node-version: 18.12.1
     - name: install packages
       run: yarn install
     - name: ${{ matrix.env.TASK }}
