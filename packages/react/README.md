@@ -1,6 +1,6 @@
 *Use of this software is subject to important terms and conditions as set forth in the License file*
 
-# App Scaffold
+# React App Scaffold
 
 ## Description
 This repo contains a scaffold to help developers build [apps for Zendesk products](https://developer.zendesk.com/apps/docs/apps-v2/getting_started).
@@ -8,24 +8,25 @@ This repo contains a scaffold to help developers build [apps for Zendesk product
 ## Getting Started
 
 ### Dependencies
-- [Node.js](https://nodejs.org/en/) >= 6.11.5
-- [Ruby](https://www.ruby-lang.org/) >= 2.0.x
+- [Node.js](https://nodejs.org/en/) >= 18.12.1
+- [Ruby](https://www.ruby-lang.org/) = 2.6.x
 
 ### Setup
 1. Clone or fork this repo
-2. Change (`cd`) into the `app_scaffold` directory
+2. Change (`cd`) into the `app_scaffolds/packages/react` directory
 3. Run `yarn install`
 
-You can use either `yarn` or `npm` as package manager and run the scripts with the corresponding commands.
-
-To run your app locally in Zendesk, you need the latest [Zendesk Command Line Interface (ZCLI)](https://github.com/zendesk/zcli).
+To run your app locally in Zendesk, you need the latest [Zendesk CLI](https://github.com/zendesk/zcli).
 
 ### Running locally
 
-To serve the app to your Zendesk instance with `?zcli_apps=true`, run
+To serve the app to your Zendesk instance with `?zcli_apps=true`, open a new terminal and run
 
 ```
 yarn run watch
+```
+and then open a new terminal under `apps_scaffolds/packages/react` directory and run
+```
 zcli apps:server dist
 ```
 
@@ -36,11 +37,11 @@ The App Scaffold includes many features to help you maintain and scale your app.
 
 ECMAScript 6, also known as ECMAScript 2015, is the latest version of the ECMAScript standard. The App Scaffold includes the [Babel compiler](https://babeljs.io/) to transpile your code to ES5. This allows you to use ES6 features, such as classes, arrow functions and template strings even in browsers that haven't fully implemented these features.
 
-- [Zendesk Garden](https://garden.zendesk.com/css-components/) UI components
+- [Zendesk Garden](https://garden.zendesk.com/) React UI components
 
-Collection of user interface components for Zendesk products. You’ll find components built to respond to a range of user input devices, tuned to handle right-to-left layouts, and finessed with just the right touch of subtle animation.
+Collection of React components for Zendesk products. You’ll find components built to respond to a range of user input devices, tuned to handle right-to-left layouts, and finessed with just the right touch of subtle animation.
 
-- [Webpack 4](https://webpack.github.io/) module bundler
+- [Webpack 5](https://webpack.github.io/) module bundler
 
 Webpack is a module bundler, we use it to bundle up Javascript modules for use as web applications, also to perform tasks like transforming and transpiling, etc.
 
@@ -112,7 +113,7 @@ webpack.config.js is a configuration file for [webpack](https://webpack.github.i
 The App Scaffold provides some helper functions in `/src/javascripts/lib/helpers.js` to help building apps.
 
 ### I18n
-The I18n (internationalization) module in `/src/javascripts/lib/i18n.js` provides a `t` method to look up translations based on a key. For more information, see [Using the I18n module](https://github.com/zendesk/app_scaffold/blob/master/doc/i18n.md).
+The I18n (internationalization) module in `/src/javascripts/lib/i18n.js` provides a `t` method to look up translations based on a key. For more information, see [Using the I18n module](https://github.com/zendesk/app_scaffolds/blob/master/packages/react/doc/i18n.md).
 
 ## Parameters and Settings
 If you need to test your app with a `parameters` section in `dist/manifest.json`, foreman might crash with a message like:
@@ -139,7 +140,7 @@ myParameter: 'some value!'
 
 ## Testing
 
-The App Scaffold is currently setup for testing with [Jest](https://jestjs.io/). To run specs, run
+The App Scaffold is currently setup for testing with [Jest](https://jestjs.io/). To run specs, open a new terminal and run
 
 ```
 yarn test
@@ -152,49 +153,47 @@ Specs live under the `spec` directory.
 To check that your app will pass the server-side validation check, run
 
 ```
-zcli apps:validate --path=dist
+zcli apps:validate dist
 ```
 
 If validation is successful, you can upload the app into your Zendesk account by running
 
 ```
-zcli apps:create --path=dist
+zcli apps:create dist
 ```
 
 To update your app after it has been created in your account, run
 
 ```
-zcli apps:update --path=dist
+zcli apps:update dist
 ```
 
 Or, to create a zip archive for manual upload, run
 
 ```
-zcli apps:package --path=dist
+zcli apps:package dist
 ```
 
 taking note of the created filename.
 
-For more information on the Zendesk Apps Tools please see the [documentation](https://developer.zendesk.com/apps/docs/apps-v2/getting_started#zendesk-app-tools).
+For more information on the Zendesk CLI please see the [documentation](https://developer.zendesk.com/documentation/apps/app-developer-guide/zcli/).
 
 ## External Dependencies
-External dependencies are defined in [webpack.config.js](https://github.com/zendesk/app_scaffold/blob/master/webpack.config.js#L22). This ensures these dependencies are included in your app's `index.html`.
-
-## Zendesk Garden CSS Components
-Included [Zendesk Garden CSS Components](https://garden.zendesk.com/css-components/) are listed in [package.json](https://github.com/zendesk/app_scaffold/blob/master/package.json#L25) as dev dependencies. Instead of importing them into the app css bundle, we are building a [jsDelivr CDN](https://www.jsdelivr.com/) link from the dependencies list and inject the link into `index.html` as another `<style>` tag. Feel free to add/remove the Garden components as needed, webpack will generate and insert the updated link during the build process.
+External dependencies are defined in [webpack.config.js](https://github.com/zendesk/app_scaffolds/blob/master/packages/react/webpack.config.js). This ensures these dependencies are included in your app's `index.html`.
 
 ## Contribute
 * Put up a PR into the master branch.
 * CC and get a +1 from @zendesk/vegemite.
 
 ## Bugs
-Submit Issues via [GitHub](https://github.com/zendesk/app_scaffold/issues/new) or email support@zendesk.com.
+Submit Issues via [GitHub](https://github.com/zendesk/app_scaffolds/issues/new) or email support@zendesk.com.
 
 ## Useful Links
 Links to maintaining team, confluence pages, Datadog dashboard, Kibana logs, etc
 - https://developer.zendesk.com/
 - https://github.com/zendesk/zendesk_apps_tools
 - https://webpack.github.io
+- https://developer.zendesk.com/documentation/apps/build-an-app/using-react-in-a-support-app/
 
 ## Copyright and license
 Copyright 2018 Zendesk

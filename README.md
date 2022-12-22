@@ -8,33 +8,31 @@ This repo contains various scaffolds to help developers build [apps for Zendesk 
 ## Getting Started
 
 ### Dependencies
-- [Node.js](https://nodejs.org/en/) >= 6.11.5
-- [Ruby](https://www.ruby-lang.org/) >= 2.0.x
+- [Node.js](https://nodejs.org/en/) >= 18.12.1
+- [Ruby](https://www.ruby-lang.org/) = 2.6.x
 
 ### Setup
 1. Clone or fork this repo
-2. Change (`cd`) into the `app_scaffold` directory
+2. Change (`cd`) into the `app_scaffolds` directory
 3. Run `yarn install`
-
-You can use either `yarn` or `npm` as package manager and run the scripts with the corresponding commands.
+4. `packages/react` contains react app scaffold. Please follow [React README](./packages/react/README.md)
+5. `packages/basic` contains basic app scaffold. Please follow [Basic README](./packages/basic/README.md)
 
 To run your app locally in Zendesk, you need the latest [Zendesk Command Line Interface (ZCLI)](https://github.com/zendesk/zcli).
-
-## Serving an app
-Refer to readmes in each package for more detailed instructions.
 
 ## Contribute
 * Put up a PR into the master branch.
 * CC and get a +1 from @zendesk/vegemite.
 
 ## Bugs
-Submit Issues via [GitHub](https://github.com/zendesk/app_scaffold/issues/new) or email support@zendesk.com.
+Submit Issues via [GitHub](https://github.com/zendesk/app_scaffolds/issues/new) or email support@zendesk.com.
 
 ## Useful Links
 Links to maintaining team, confluence pages, Datadog dashboard, Kibana logs, etc
 - https://developer.zendesk.com/
 - https://github.com/zendesk/zendesk_apps_tools
 - https://webpack.github.io
+- https://developer.zendesk.com/documentation/apps/build-an-app/using-react-in-a-support-app/
 
 ## Copyright and license
 Copyright 2018 Zendesk
