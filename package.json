@@ -1,6 +1,9 @@
 {
   "dependencies": {
-    "lerna": "^4.0.0"
+    "@mdi/react": "^1.6.1",
+    "@zendeskgarden/react-buttons": "^8.69.3",
+    "lerna": "^7.1.4",
+    "react-icons": "^4.10.1"
   },
   "name": "app_scaffolds",
   "private": true,
