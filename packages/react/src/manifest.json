@@ -1,9 +1,9 @@
 {
-  "name": "Example App",
+  "name": "Audiotonix ServiceSync",
   "author": {
-    "name": "John Doe",
-    "email": "support@zendesk.com",
-    "url": "https://www.zendesk.com"
+    "name": "Aaron Gulley",
+    "email": "erpsupport@audiotonix.com",
+    "url": "https://www.audiotonix.com"
   },
   "defaultLocale": "en",
   "private": true,
