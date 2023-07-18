@@ -1,30 +1,21 @@
-import React from 'react'
-import { render } from 'react-dom'
-import { ThemeProvider, DEFAULT_THEME } from '@zendeskgarden/react-theming'
+import React from 'react';
+import { render } from 'react-dom';
+import { ThemeProvider, DEFAULT_THEME } from '@zendeskgarden/react-theming';
 import styled from 'styled-components';
-import { Grid, Row, Col } from '@zendeskgarden/react-grid'
-import { UnorderedList } from '@zendeskgarden/react-typography'
-import { SM, LG } from '@zendeskgarden/react-typography';
-import I18n from '../../javascripts/lib/i18n'
-import { resizeContainer, escapeSpecialChars as escape } from '../../javascripts/lib/helpers'
-import { Input, MediaInput, Field, Hint, Label, Message, FauxInput, Checkbox } from '@zendeskgarden/react-forms'
+import { Grid, Row, Col } from '@zendeskgarden/react-grid';
+import { Input, Field, Label, Checkbox } from '@zendeskgarden/react-forms';
+import { Table, Row, Cell, Head, HeaderCell, HeaderRow, Body } from '@zendeskgarden/react-tables'
 import { MdAddBox } from 'react-icons/md';
-import { Tooltip } from '@zendeskgarden/react-tooltips';
-import { Well, Title } from '@zendeskgarden/react-notifications';
-import { Body, Cell, Head, HeaderCell, HeaderRow, Table, Caption } from '@zendeskgarden/react-tables';
 
-
-//a4349f033729446dec00496e812533d4a10ff7470f5a8e7b32b1a2c107f200f8
-
-const MAX_HEIGHT = 2000
+const MAX_HEIGHT = 2000;
 const StyledContainer = styled.div`
   margin-bottom: ${p => p.theme.space.xl};
   min-width: 500px;
 `;
-const StyledField = styled(Field)`
-  margin-top: ${p => p.theme.space.xs};
-`;
+
 class App extends React.Component {
+  _isMounted = false; // Add a flag to track the component's mount status
+
   constructor(props) {
     super(props);
     this.state = {
@@ -36,15 +27,19 @@ class App extends React.Component {
   }
 
   async componentDidMount() {
-    // Call the init method here to perform the initialization once the component is mounted
+    this._isMounted = true; // Component is now mounted
     await this.initData();
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false; // Component is about to be unmounted
   }
 
   async initData() {
     try {
       // Fetch initial data
       const data = await this._client.get('ticket');
-      const { id: ticketID, subject: ticketDesc, comments } = data.ticket;
+      const { comments } = data.ticket;
       const strippedComm = comments[1].value.replace(/(<([^>]+)>)/gi, '').replace(/&nbsp;/gi, ' ').replace(/&amp;/gi, '&');
 
       console.log(data);
@@ -64,6 +59,13 @@ class App extends React.Component {
   handleMdAddBoxClick = async () => {
     try {
       const serialNum = this.state.zenSerialNum; // Use state value here
+
+      // Check if zenSerialNum is not empty before making the API call
+      if (!serialNum) {
+        console.warn('No zenSerialNum available to make the API call.');
+        return;
+      }
+
       const url = `https://uksouthdtpilot01.epicorsaas.com/saas513pilot/api/v1/BaqSvc/getSerialNumberData_workato`;
 
       const response = await fetch(`${url}?SerialNo=${serialNum}`, {
@@ -72,12 +74,14 @@ class App extends React.Component {
         },
       });
 
-      if (response.ok) {
-        const data = await response.json();
-        console.log('Received data from API:', data);
-        this.setState({ tableData: [data] });
-      } else {
-        console.error('Failed to fetch data:', response);
+      if (this._isMounted) {
+        if (response.ok) {
+          const data = await response.json();
+          console.log('Received data from API:', data);
+          this.setState({ tableData: [data] });
+        } else {
+          console.error('Failed to fetch data:', response);
+        }
       }
     } catch (error) {
       console.error('An error occurred while fetching data:', error);
@@ -93,54 +97,53 @@ class App extends React.Component {
 
     render(
       <ThemeProvider theme={{ ...DEFAULT_THEME }}>
-    <StyledContainer>
-      <Grid>
-        <Row>
-          <Col>
-            <form>
-            <Field>
-              <Label>Serial Number</Label>
-              {this.state.zenSerialNum ? (
-                <Input type="text" value={this.state.zenSerialNum} readOnly />
-              ) : (
-                <Input type="text" value="No data found" readOnly />
-              )}
-            </Field>
-            </form>
-          </Col>
-        </Row>
-        <br />
-        <Row>
-          <Col>
-            <form>
-              <Field>
-                <Label>Linked Case</Label>
-                <Row>
-                  <Col size="auto">
-                    <Input placeholder="ERP Case Number." />
-                  </Col>
-                  <Col size="auto">
-                  <div onClick={this.handleMdAddBoxClick}>
-                    <MdAddBox size={40} color="black" />
-                  </div>
-                </Col>
-                </Row>
-              </Field>
-            </form>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-
-          <Table style={{ minWidth: 500 }}>
-        <Head>
-          <HeaderRow>
-            <HeaderCell>Packing Slip</HeaderCell>
-            <HeaderCell>Ship Date</HeaderCell>
-            <HeaderCell>Invoiced</HeaderCell>
-          </HeaderRow>
-        </Head>
-        <Body>
+        <StyledContainer>
+          <Grid>
+            <Row>
+              <Col>
+                <form>
+                  <Field>
+                    <Label>Serial Number</Label>
+                    {this.state.zenSerialNum ? (
+                      <Input type="text" value={this.state.zenSerialNum} readOnly />
+                    ) : (
+                      <Input type="text" value="No data found" readOnly />
+                    )}
+                  </Field>
+                </form>
+              </Col>
+            </Row>
+            <br />
+            <Row>
+              <Col>
+                <form>
+                  <Field>
+                    <Label>Linked Case</Label>
+                    <Row>
+                      <Col size="auto">
+                        <Input placeholder="ERP Case Number." />
+                      </Col>
+                      <Col size="auto">
+                        <div onClick={this.handleMdAddBoxClick}>
+                          <MdAddBox size={40} color="black" />
+                        </div>
+                      </Col>
+                    </Row>
+                  </Field>
+                </form>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <Table style={{ minWidth: 500 }}>
+                  <Head>
+                    <HeaderRow>
+                      <HeaderCell>Packing Slip</HeaderCell>
+                      <HeaderCell>Ship Date</HeaderCell>
+                      <HeaderCell>Invoiced</HeaderCell>
+                    </HeaderRow>
+                  </Head>
+                  <Body>
                     {this.state.tableData.map((rowData, index) => (
                       <Row key={index}>
                         <Cell>{rowData.SerialNo_PartNum}</Cell>
@@ -148,14 +151,14 @@ class App extends React.Component {
                         <Cell>{rowData.SerialNo_SNStatus}</Cell>
                       </Row>
                     ))}
-        </Body>
-      </Table>
-      <hr></hr>
-          </Col>
-        </Row>
-        <br />
-        <Row>
-        <Col>
+                  </Body>
+                </Table>
+                <hr></hr>
+              </Col>
+            </Row>
+            <br />
+            <Row>
+              <Col>
                 <Title>Sold To</Title>
                 {this.state.tableData.length > 0 && this.state.tableData[0].Customer_CustID ? (
                   <Input type="text" value={tableData[0].Customer_CustID} readOnly />
@@ -201,17 +204,18 @@ class App extends React.Component {
         </StyledContainer>
       </ThemeProvider>,
       appContainer
-    )
-    return resizeContainer(this._client, MAX_HEIGHT)
+    );
+
+    return resizeContainer(this._client, MAX_HEIGHT);
   }
 
   /**
    * Handle error
    * @param {Object} error error object
    */
-  _handleError (error) {
-    console.log('An error is handled here: ', error.message)
+  _handleError(error) {
+    console.log('An error is handled here: ', error.message);
   }
 }
 
-export default App
+export default App;
