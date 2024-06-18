@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { createContext, useMemo } from 'react'
