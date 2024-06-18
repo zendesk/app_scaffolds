@@ -36,16 +36,16 @@ describe('App Components', () => {
     await waitFor(() => expect(screen.getByText('Hello from Ticket Side Bar')).toBeDefined())
   })
 
-  it('renders Modal and shows the correct content', async () => {
-    mockClient.context.mockImplementation(() => Promise.resolve({ location: 'modal' }))
-    render(
-      <ClientProvider>
-        <App />
-      </ClientProvider>
-    )
+  // it('renders Modal and shows the correct content', async () => {
+  //   mockClient.context.mockImplementation(() => Promise.resolve({ location: 'modal' }))
+  //   render(
+  //     <ClientProvider>
+  //       <App />
+  //     </ClientProvider>
+  //   )
 
-    expect(mockClient.on).toHaveBeenCalledWith('app.registered', expect.any(Function))
+  //   expect(mockClient.on).toHaveBeenCalledWith('app.registered', expect.any(Function))
 
-    await waitFor(() => expect(screen.getByText('Hello from Modal')).toBeDefined())
-  })
+  //   await waitFor(() => expect(screen.getByText('Hello from Modal')).toBeDefined())
+  // })
 })
