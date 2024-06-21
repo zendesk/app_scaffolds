@@ -7,7 +7,7 @@ const TranslationsPlugin = require('./webpack/translations-plugin')
 
 const externalAssets = {
   js: [
-    'https://assets.zendesk.com/apps/sdk/2.0/zaf_sdk.js'
+    'https://static.zdassets.com/zendesk_app_framework_sdk/2.0/zaf_sdk.min.js'
   ]
 }
 
@@ -77,7 +77,15 @@ module.exports = {
       warning: 'AUTOMATICALLY GENERATED FROM ./src/templates/iframe.html - DO NOT MODIFY THIS FILE DIRECTLY',
       vendorJs: externalAssets.js,
       template: './src/templates/iframe.html',
-      filename: 'iframe.html'
+      filename: 'iframe.html',
+      minify: {
+        collapseWhitespace: true,
+        keepClosingSlash: true,
+        removeComments: true,
+        removeRedundantAttributes: false,
+        removeScriptTypeAttributes: false,
+        removeStyleLinkTypeAttributes: false,
+      }
     })
   ]
 }
