@@ -14,10 +14,10 @@ jobs:
         include:
           - task: Lint
             allow_failures: false
-            command: pnpm lerna run lint
+            command: pnpm run lint
           - task: Test
             allow_failures: false
-            command: pnpm lerna run test
+            command: pnpm run test
     steps:
     - uses: zendesk/checkout@v2
     - name: Use Node.js
