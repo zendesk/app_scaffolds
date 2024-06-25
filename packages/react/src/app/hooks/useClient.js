@@ -1,7 +1,5 @@
-import { useContext } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { ClientContext } from '../contexts/ClientProvider'
-import { useState } from 'react'
-import { useEffect } from 'react'
 
 export const useClient = () => {
   const ctx = useContext(ClientContext)

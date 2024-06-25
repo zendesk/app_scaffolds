@@ -4,7 +4,7 @@ import path from 'path'
 function translationFlatten(object, currentKeys = []) {
   const res = {}
 
-  Object.keys(object).map((key) => {
+  Object.keys(object).forEach((key) => {
     const value = object[key]
 
     if (typeof value === 'object') {
