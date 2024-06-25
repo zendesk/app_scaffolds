@@ -1,7 +1,7 @@
-import { lazy } from 'react'
+import { lazy, Suspense } from 'react'
 import { useLocation } from './hooks/useClient'
 import { TranslationProvider } from './contexts/TranslationProvider'
-import { Suspense } from 'react'
+import { DEFAULT_THEME, ThemeProvider } from '@zendeskgarden/react-theming'
 
 const TicketSideBar = lazy(() => import('./locations/TicketSideBar'))
 const Modal = lazy(() => import('./locations/Modal'))
@@ -17,11 +17,13 @@ function App() {
   const Location = LOCATIONS[location] || LOCATIONS.default
 
   return (
-    <TranslationProvider>
-      <Suspense fallback={<span>Loading...</span>}>
-        <Location />
-      </Suspense>
-    </TranslationProvider>
+    <ThemeProvider theme={{ ...DEFAULT_THEME }}>
+      <TranslationProvider>
+        <Suspense fallback={<span>Loading...</span>}>
+          <Location />
+        </Suspense>
+      </TranslationProvider>
+    </ThemeProvider>
   )
 }
 

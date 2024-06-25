@@ -1,6 +1,10 @@
 import { useEffect } from 'react'
 import { useClient } from '../hooks/useClient'
 import { useI18n } from '../hooks/useI18n'
+import { Button } from '@zendeskgarden/react-buttons'
+import { Grid, Row } from '@zendeskgarden/react-grid'
+import { XL } from '@zendeskgarden/react-typography'
+import styled from 'styled-components'
 
 const TicketSideBar = () => {
   const client = useClient()
@@ -22,13 +26,22 @@ const TicketSideBar = () => {
   }, [client])
 
   return (
-    <div>
-      <h1>{t('ticket_sidebar.title')}</h1>
-      <button className="button small" onClick={handleNewInstance}>
-        Open Modal Instance
-      </button>
-    </div>
+    <GridContainer>
+      <Row justifyContent="center">
+        <XL isBold>{t('ticket_sidebar.title')}</XL>
+      </Row>
+      <Row justifyContent="center">
+        <Button isPrimary onClick={handleNewInstance}>
+          Open Modal Instance
+        </Button>
+      </Row>
+    </GridContainer>
   )
 }
+
+const GridContainer = styled(Grid)`
+  display: grid;
+  gap: ${(props) => props.theme.space.sm};
+`
 
 export default TicketSideBar
