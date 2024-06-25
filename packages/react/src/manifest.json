@@ -1,7 +1,7 @@
 {
-  "name": "Example App",
+  "name": "React JS Scaffold",
   "author": {
-    "name": "John Doe",
+    "name": "Jhon Doe",
     "email": "support@zendesk.com",
     "url": "https://www.zendesk.com"
   },
@@ -10,7 +10,7 @@
   "location": {
     "support": {
       "ticket_sidebar": {
-        "url": "assets/iframe.html",
+        "url": "http://localhost:3000/",
         "flexible": true
       }
     }

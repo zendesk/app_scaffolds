@@ -6,7 +6,10 @@
     "installation_instructions": "Configure the following app settings, then click Install:...",
     "title": "Example App"
   },
-  "default": {
-    "organizations": "organizations"
+  "ticket_sidebar": {
+    "title": "Hello from Ticket Side Bar"
+  },
+  "modal": {
+    "title": "Hello from Modal"
   }
 }

@@ -14,7 +14,7 @@ This repo contains various scaffolds to help developers build [apps for Zendesk 
 ### Setup
 1. Clone or fork this repo
 2. Change (`cd`) into the `app_scaffolds` directory
-3. Run `yarn install`
+3. Run `pnpm install`
 4. `packages/react` contains react app scaffold. Please follow [React README](./packages/react/README.md)
 5. `packages/basic` contains basic app scaffold. Please follow [Basic README](./packages/basic/README.md)
 

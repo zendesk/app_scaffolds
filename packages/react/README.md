@@ -3,119 +3,131 @@
 # React App Scaffold
 
 ## Description
+
 This repo contains a scaffold to help developers build [apps for Zendesk products](https://developer.zendesk.com/apps/docs/apps-v2/getting_started).
 
 ## Getting Started
 
 ### Dependencies
+
 - [Node.js](https://nodejs.org/en/) >= 18.12.1
 - [Ruby](https://www.ruby-lang.org/) = 2.6.x
 
 ### Setup
+
 1. Clone or fork this repo
 2. Change (`cd`) into the `app_scaffolds/packages/react` directory
-3. Run `yarn install`
+3. Run `pnpm install`
 
 To run your app locally in Zendesk, you need the latest [Zendesk CLI](https://github.com/zendesk/zcli).
 
 ### Running locally
 
-To serve the app to your Zendesk instance with `?zcli_apps=true`, open a new terminal and run
+To serve the app to your Zendesk instance with `?zcli_apps=true`, follow the steps below based on your environment:
+
+#### Development Environment
+
+1. Open a new terminal and run the command:
 
 ```
-yarn run watch
+pnpm run dev
 ```
-and then open a new terminal under `apps_scaffolds/packages/react` directory and run
+
+2. Open another terminal in the `app_scaffolds/packages/react` directory and run:
+
 ```
-zcli apps:server dist
+pnpm run start
+```
+
+> **Note:** Running the `pnpm run dev` command enables Hot Module Replacement (HMR), which allows you to see the changes you make to your code immediately without having to manually refresh the page. This greatly enhances the development experience.
+
+#### Production Environment
+
+1. Open a new terminal and run the command:
+
+```
+pnpm run build
+```
+
+2. Open another terminal in the `app_scaffolds/packages/react` directory and run:
+
+```
+pnpm run start:prod
 ```
 
 ## But why?
+
 The App Scaffold includes many features to help you maintain and scale your app. Some of the features provided by the App Scaffold are listed below. However, you don't need prior experience in any of these to be able to use the scaffold successfully.
 
-- [ES6 (ES2015)](https://babeljs.io/docs/learn-es2015/)
+- [ECMAScript](https://esbuild.github.io/content-types/#javascript) (ES2022)
 
-ECMAScript 6, also known as ECMAScript 2015, is the latest version of the ECMAScript standard. The App Scaffold includes the [Babel compiler](https://babeljs.io/) to transpile your code to ES5. This allows you to use ES6 features, such as classes, arrow functions and template strings even in browsers that haven't fully implemented these features.
+  Vite supports the latest ECMAScript standards, including ES2022. This allows you to use modern JavaScript features such as class static initialization blocks, private instance methods and fields, the `at` method for arrays, public instance fields, top-level `await`, `Object.hasOwn`, and many more. Vite uses ESBuild for [fast transpilation](https://esbuild.github.io/) and Rollup for efficient module bundling and performance optimization. ESBuild ensures compatibility with the latest ECMAScript features for an enhanced development experience.
 
 - [Zendesk Garden](https://garden.zendesk.com/) React UI components
 
-Collection of React components for Zendesk products. You’ll find components built to respond to a range of user input devices, tuned to handle right-to-left layouts, and finessed with just the right touch of subtle animation.
+  Collection of React components optimized for Zendesk products, designed to handle a range of user input devices and support right-to-left layouts, with subtle animations for enhanced user experience.
 
-- [Webpack 5](https://webpack.github.io/) module bundler
+- [Vite](https://vitejs.dev/) with Rollup under the hood
 
-Webpack is a module bundler, we use it to bundle up Javascript modules for use as web applications, also to perform tasks like transforming and transpiling, etc.
+  Vite leverages Rollup as its underlying bundler for fast, efficient module bundling and serving of your web application. It enhances development speed with lightning-fast hot module replacement (HMR) and optimized build performance.
 
-- [PostCSS](https://postcss.org//) stylesheets
+- [PostCSS](https://postcss.org/) stylesheets
 
-PostCSS transforms stylesheets with JS plugins. These plugins can lint your CSS, support variables and mixins, transpile future CSS syntax, inline images, and more.
+  PostCSS transforms your stylesheets using JavaScript plugins, supporting CSS linting, variables, mixins, future syntax transpilation, and image inlining among other features, seamlessly integrated into Vite for enhanced CSS development workflow.
 
-- [StandardJS](https://standardjs.com/) JS linting
+- [Optimized Build](https://vitejs.dev/guide/build.html)
 
-StandardJS is a Javascript style guide, it helps catching style issues or code errors, and automatically formats code for you.
+  Vite provides optimized production builds with features like code splitting, tree shaking, and pre-bundling, ensuring fast and efficient deployment of your application.
 
-- [Jest](https://jestjs.io/) Javascript testing framework
+- [Vitest](https://github.com/vitejs/vitest) JavaScript testing framework
 
-Jest is bundled with JSDom and built on top of Jasmine. It's more than just a ReactJS testing framework. In the Zendesk Apps team, we use it for unit and integration testing of the Official Apps. It also includes a good test coverage toolset out of the box.
+  Vitest, built for Vite, is used for unit and integration testing of your application. It integrates seamlessly with Vite's testing ecosystem, offering efficient and reliable test coverage for your codebase.
 
 ## Folder structure
 
 The folder and file structure of the App Scaffold is as follows:
 
-| Name                                    | Description                                                                                  |
-|:----------------------------------------|:---------------------------------------------------------------------------------------------|
-| [`.github/`](#.github)                  | The folder to store PULL_REQUEST_TEMPLATE.md, ISSUE_TEMPLATE.md and CONTRIBUTING.md, etc     |
-| [`dist/`](#dist)                        | The folder in which webpack packages the built version of your app                           |
-| [`spec/`](#spec)                        | The folder in which all of your test files live                                              |
-| [`src/`](#src)                          | The folder in which all of your source JavaScript, CSS, templates and translation files live |
-| [`webpack/`](#src)                      | translations-loader and translations-plugin to support i18n in the application               |
-| [`.babelrc`](#packagejson)              | Configuration file for Babel.js                                                              |
-| [`.browserslistrc`](#packagejson)       | Configuration file for browserslist                                                           |
-| [`jest.config.js`](#packagejson)        | Configuration file for Jest                                                                  |
-| [`package.json`](#packagejson)          | Configuration file for Project metadata, dependencies and build scripts                      |
-| [`postcss.config.js`](#packagejson)     | Configuration file for PostCSS                                                               |
-| [`webpack.config.js`](#webpackconfigjs) | Configuration file that webpack uses to build your app                                       |
+| Name                           | Description                                                                                  |
+| :----------------------------- | :------------------------------------------------------------------------------------------- |
+| [`.github/`](#.github)         | The folder to store PULL_REQUEST_TEMPLATE.md, ISSUE_TEMPLATE.md and CONTRIBUTING.md, etc     |
+| [`dist/`](#dist)               | The folder in which vite packages the built version of your app                              |
+| [`spec/`](#spec)               | The folder in which all of your test files live                                              |
+| [`src/`](#src)                 | The folder in which all of your source JavaScript, CSS, templates and translation files live |
+| [`rollup/`](#src)              | static-copy-plugin and translations-loader-plugin to support i18n in the application         |
+| [`vite.config.js`](#vite)      | Configuration file for vite                                                                  |
+| [`package.json`](#packagejson) | Configuration file for Project metadata, dependencies and build scripts                      |
 
 #### dist
-The dist directory is created when you run the app building scripts. You will need to package this folder when submitting your app to the Zendesk Apps Marketplace, It is also the folder you will have to serve when using [ZCLI](https://developer.zendesk.com/documentation/apps/app-developer-guide/zcli/). It includes your app's manifest.json file, an assets folder with all your compiled JavaScript and CSS as well as HTML and images.
+
+The dist directory is created when you run the app building scripts. You will need to package this folder when submitting your app to the Zendesk Apps Marketplace. It is also the folder you will have to serve when using [ZCLI](https://developer.zendesk.com/documentation/apps/app-developer-guide/zcli/). It includes your app's manifest.json file, an assets folder with all your compiled JavaScript and CSS as well as HTML and images.
 
 #### spec
-The spec directory is where all your tests and test helpers live. Tests are not required to submit/upload your app to Zendesk and your test files are not included in your app's package, however it is good practice to write tests to document functionality and prevent bugs.
+
+The spec directory is where all your tests and test helpers live. Tests are not required to submit/upload your app to Zendesk and your test files are not included in your app's package; however, it is good practice to write tests to document functionality and prevent bugs.
 
 #### src
-The src directory is where your raw source code lives. The App Scaffold includes different directories for JavaScript, stylesheets, templates, images and translations. Most of your additions will be in here (and spec, of course!).
 
-#### webpack
-This directory contains custom tooling to process translations at build time:
+The src directory is where your raw source code lives. The App Scaffold includes different directories for JavaScript, stylesheets, templates, images, and translations. Most of your additions will be in here (and spec, of course!).
 
-- translations-loader.js is used by Webpack to convert .json translation files to JavaScript objects, for the app itself.
-- translations-plugin.js is used to extract compulsory translation strings from the en.json file that are used to display metadata about your app on the Zendesk Apps Marketplace.
+#### vite.config.js
 
+`vite.config.js` is the configuration file for [Vite](https://vitejs.dev/). Vite is a fast build tool that leverages ESBuild for transpilation and Rollup for bundling. This file includes configurations for building, testing, and other customizations.
 
-#### .babelrc
-[.babelrc](https://babeljs.io/docs/en/babelrc.html) is the configuration file for babel compiler.
+- You can modify ESBuild settings directly within this file to adjust transpilation options. For more information, see the [Vite documentation on ESBuild](https://vitejs.dev/config/#esbuild).
 
-#### .browserslistrc
-.browserslistrc is a configuration file to specify browsers supported by your application, some develop/build tools read info from this file if it exists in your project root. At present, our scaffolding doesn't reply on this file, [default browserslist query](https://github.com/browserslist/browserslist#queries) is used by [Babel](https://babeljs.io/docs/en/babel-preset-env/) and [PostCSS](https://github.com/csstools/postcss-preset-env#browsers)
-
-#### jest.config.js
-[jest.config.js](https://jestjs.io/docs/en/configuration.html) is the configuration file for Jest
+- **Static Copy Plugin**: This plugin is used to copy static assets to the `dist` directory during the build process.
+- **Translations Loader Plugin**: This plugin processes translation files at build time, converting `.json` translation files to JavaScript objects for the app.
 
 #### package.json
-package.json is the configuration file for [Yarn](https://yarnpkg.com/), which is a package manager for JavaScript. This file includes information about your project and its dependencies. For more information on how to configure this file, see [Yarn package.json](https://yarnpkg.com/en/docs/package-json).
 
-#### postcss.config.js
-postcss.config.js is the configuration file for [PostCSS](https://postcss.org/)
-
-#### webpack.config.js
-webpack.config.js is a configuration file for [webpack](https://webpack.github.io/). Webpack is a JavaScript module bundler. For more information about webpack and how to configure it, see [What is webpack](http://webpack.github.io/docs/what-is-webpack.html).
-
-## Helpers
-The App Scaffold provides some helper functions in `/src/javascripts/lib/helpers.js` to help building apps.
+package.json is the configuration file for [pnpm](https://pnpm.io/), which is a package manager for JavaScript. This file includes information about your project and its dependencies. For more information on how to configure this file, see [pnpm package.json](https://pnpm.io/package_json).
 
 ### I18n
-The I18n (internationalization) module in `/src/javascripts/lib/i18n.js` provides a `t` method to look up translations based on a key. For more information, see [Using the I18n module](https://github.com/zendesk/app_scaffolds/blob/master/packages/react/doc/i18n.md).
+
+The I18n (internationalization) module in `/src/lib/i18n.js` provides a `t` method to look up translations based on a key. For more information, see [Using the I18n module](https://github.com/zendesk/app_scaffolds/blob/master/packages/react/doc/i18n.md).
 
 ## Parameters and Settings
+
 If you need to test your app with a `parameters` section in `dist/manifest.json`, foreman might crash with a message like:
 
 > Would have prompted for a value interactively, but zcli is not listening to keyboard input.
@@ -140,10 +152,10 @@ myParameter: 'some value!'
 
 ## Testing
 
-The App Scaffold is currently setup for testing with [Jest](https://jestjs.io/). To run specs, open a new terminal and run
+The App Scaffold is currently setup for testing with [Vitetest](https://vitest.dev/). To run specs, open a new terminal and run
 
 ```
-yarn test
+pnpm run test
 ```
 
 Specs live under the `spec` directory.
@@ -179,23 +191,30 @@ taking note of the created filename.
 For more information on the Zendesk CLI please see the [documentation](https://developer.zendesk.com/documentation/apps/app-developer-guide/zcli/).
 
 ## External Dependencies
+
 External dependencies are defined in [webpack.config.js](https://github.com/zendesk/app_scaffolds/blob/master/packages/react/webpack.config.js). This ensures these dependencies are included in your app's `index.html`.
 
 ## Contribute
-* Put up a PR into the master branch.
-* CC and get a +1 from @zendesk/vegemite.
+
+- Put up a PR into the master branch.
+- CC and get a +1 from @zendesk/vegemite.
 
 ## Bugs
+
 Submit Issues via [GitHub](https://github.com/zendesk/app_scaffolds/issues/new) or email support@zendesk.com.
 
 ## Useful Links
+
 Links to maintaining team, confluence pages, Datadog dashboard, Kibana logs, etc
+
 - https://developer.zendesk.com/
 - https://github.com/zendesk/zendesk_apps_tools
-- https://webpack.github.io
+- https://esbuild.github.io/
+- https://vitejs.dev/
 - https://developer.zendesk.com/documentation/apps/build-an-app/using-react-in-a-support-app/
 
 ## Copyright and license
+
 Copyright 2018 Zendesk
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
