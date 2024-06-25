@@ -1,152 +1,224 @@
-# ReactJS Scaffold Proposal
+*Use of this software is subject to important terms and conditions as set forth in the License file*
 
-## Purpose
+# React App Scaffold
 
-The primary objective of this React scaffold is to leverage the latest React version to enhance the developer experience by phasing out class components in favor of exhaustive use of hooks—a pivotal feature in React, especially with the upcoming hooks in React 19. This scaffold is designed to closely align with React's evolving best practices and features, thereby simplifying the transition for developers and promoting modern React paradigms. Additionally, the scaffold aims to provide a fast and efficient development experience by leveraging Hot Module Replacement (HMR) for instant feedback during development.
+## Description
 
-```
-   This is not a final version, any changes suggestions are more than welcome!
-```
+This repo contains a scaffold to help developers build [apps for Zendesk products](https://developer.zendesk.com/apps/docs/apps-v2/getting_started).
 
-## Advantages of Moving from Webpack to Vite
+## Getting Started
 
-1. **Faster Build Times**:
+### Dependencies
 
-   - Vite provides significantly faster cold starts and hot module replacement (HMR) due to its modern architecture that leverages native ES modules. This results in a more efficient and responsive development experience compared to Webpack's slower bundling process.
+- [Node.js](https://nodejs.org/en/) >= 18.12.1
+- [Ruby](https://www.ruby-lang.org/) = 2.6.x
 
-2. **Improved Developer Experience**:
+### Setup
 
-   - The use of Vite's dev server offers instant feedback during development, enhancing productivity. The scaffold leverages modern React practices, emphasizing hooks over class components, aligning with the latest React trends and upcoming features in React 19.
+1. Clone or fork this repo
+2. Change (`cd`) into the `app_scaffolds/packages/react` directory
+3. Run `pnpm install`
 
-3. **Simplified Configuration**:
+To run your app locally in Zendesk, you need the latest [Zendesk CLI](https://github.com/zendesk/zcli).
 
-   - Vite requires less configuration out-of-the-box, making it easier to set up and maintain. This reduces the overhead for developers, allowing them to focus more on application logic rather than build tooling.
+### Running locally
 
-4. **Efficient Static Asset Handling**:
+To serve the app to your Zendesk instance with `?zcli_apps=true`, follow the steps below based on your environment:
 
-   - Vite includes built-in support for static asset handling, which simplifies the process of managing images, stylesheets, and other static files. This reduces the need for custom loaders and plugins that were necessary in Webpack.
+#### Development Environment
 
-5. **Enhanced Build Performance**:
-
-   - Vite's use of Rollup for production builds ensures optimized output with efficient tree-shaking and code-splitting, resulting in smaller and faster-loading bundles. This is particularly beneficial for performance-critical applications.
-
-6. **Plugin Ecosystem**:
-
-   - Vite has a growing ecosystem of plugins that are designed to be simpler and more performant. This ecosystem supports a wide range of functionalities, from legacy compatibility to advanced optimizations, enhancing the scaffold's flexibility and capabilities.
-
-7. **Modern Features and Practices**:
-   - By incorporating Vite, the scaffold is better positioned to adopt modern JavaScript and TypeScript features, improving code quality and maintainability. The integration with TypeScript and JSX is seamless, supporting advanced type-checking and transpilation.
-   - **JSX and CSS Support**: Vite supports JSX and CSS out-of-the-box, including the latest CSS features. This simplifies the setup process and ensures that developers can take advantage of modern styling techniques without additional configuration.
-
-## Comparison of Previous Scaffold and New Proposal
-
-| Feature                                 | Current (New Proposal)                                                                                                                     | Previous                                            |
-| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------- |
-| **HMR**                                 | Now we support a better development experience with HMR.                                                                                   | Not supported                                       |
-| **Translations**                        | Supported with the rollup/translations-loader-plugin                                                                                       | Supported through webpack/translation-loader plugin |
-| **Testing**                             | Vitest setup included, except for the helper functions (can be added if needed)                                                            | Jest setup for unit and integration testing         |
-| **Functional Components**               | Suited for a better use of hooks and modern React paradigms                                                                                | Class components and some use of hooks              |
-| **Preprocess CSS**                      | Supported out of the box with Vite                                                                                                         | Supported with PostCSS                              |
-| **Build Tool**                          | Vite (faster, less configuration)                                                                                                          | Webpack (slower, more configuration)                |
-| **Static Asset Handling**               | Efficient static asset handling with Vite                                                                                                  | Managed with custom loaders in Webpack              |
-| **Developer Experience**                | Enhanced with instant feedback and faster build times                                                                                      | Slower build times, less responsive                 |
-| **Configuration**                       | Simplified configuration with Vite                                                                                                         | More complex configuration with Webpack             |
-| **Production Build**                    | Rollup for optimized output, tree-shaking, and code-splitting                                                                              | Webpack for module bundling                         |
-| **Plugin Ecosystem**                    | Modern and growing ecosystem with Vite                                                                                                     | Established ecosystem with Webpack                  |
-| **JSX and CSS Support**                 | Out-of-the-box support in Vite                                                                                                             | Managed with custom loaders in Webpack              |
-| **TypeScript Support**                  | Seamless integration considered                                                                                                            | Not mentioned                                       |
-| **Development and Production Workflow** | Requires running the app in dev mode (`src`) for HMR and building for production (`dist`) for submission and validation with ZCLI commands | Single mode, run the generated app directly locally |
-
-## Build Process
-
-We are enhancing our build process by incorporating [Vite](https://vitejs.dev/), a modern build tool that is faster, lighter, and better suited for our needs than Webpack. Key customizations in our build process include:
-
-- **Translation Loader Plugin**: Implements the same logic as the existing scaffold loader.
-- **Static File Generation Plugin**: Adds a custom plugin for static file generation, capable of modifying files on-the-fly.
-
-Other processes like TypeScript, JSX, CSS, and more are supported out-of-the-box by Vite.
-
-## Structure
-
-The project structure is designed to be intuitive and familiar for developers, including the normal entry point (index.html) inside src and the app that will contain our core application that can handle multiple locations, and the zendesk requirement files translations and the manifest.json. Addition to this there is the rollup folder that will contain some of the build process that mimics the behavior for the previous scaffold.
+1. Open a new terminal and run the command:
 
 ```
-rollup
-│
-│ static-copy-plugin
-│ tranlsation-loader-plugin
-│
-src
-│   app
-│   │
-│   │───locations
-│   │	│
-│   │   │ Modal
-│   │   │ TicketSideBar
-│	 │
-│   │───contexts
-│   │   │
-│   │   │ ClientPovider
-│   │   │ TranslationProvider
-│   │
-│   │───hooks
-│   │   │
-│   │   │ useClient
-│   │   │ useI18n
-│
-└───translations
-│   │ en.json
-│   │ ...
-│   │
-|___assets
-│   │logo.png
-│   │...
-│
-│ manifest.json
-│ index.html
-```
-
-**Key Points**:
-
-- `index.html` serves as the entry point. This design decision, aligned with common practices and discussions with team members, helps simplify scenarios involving multiple locations or modal instances.
-- We have integrated two contexts: one for translations and another for the ZAF client, to enhance reusability and avoid props drilling.
-
-# Running the App
-
-To run the scaffold locally, follow these steps:
-
-## Development Environment
-
-```bash
-pnpm install
 pnpm run dev
 ```
 
-In another terminal, start the server with:
+2. Open another terminal in the `app_scaffolds/packages/react` directory and run:
 
-```bash
-zcli apps:server src
+```
+pnpm run start
 ```
 
-## Production Environment
+> **Note:** Running the `pnpm run dev` command enables Hot Module Replacement (HMR), which allows you to see the changes you make to your code immediately without having to manually refresh the page. This greatly enhances the development experience.
 
-First, build the app:
+#### Production Environment
 
-```bash
+1. Open a new terminal and run the command:
+
+```
 pnpm run build
 ```
 
-Then, in another terminal, start the server with:
+2. Open another terminal in the `app_scaffolds/packages/react` directory and run:
 
-```bash
-zcli apps:server dist
+```
+pnpm run start:prod
 ```
 
-## Considerations
+## But why?
 
-The current setup fully exploits Hot Module Replacement (HMR) to provide a faster and better developer experience. This setup involves running the app in two stages/environments: one for development and one for production. This approach ensures instant feedback during development, significantly enhancing productivity. It also emphasizes the importance of modern development practices, making the overall development process more efficient.
+The App Scaffold includes many features to help you maintain and scale your app. Some of the features provided by the App Scaffold are listed below. However, you don't need prior experience in any of these to be able to use the scaffold successfully.
 
-## Missing Elements
+- [ECMAScript](https://esbuild.github.io/content-types/#javascript) (ES2022)
 
-- **Testing**: Integration of a testing framework is pending. This is crucial for ensuring the reliability and stability of the scaffold. Pretty simple using vitest and the common react testing libries.
-- **Possible Use of TypeScript**: We are considering the possibility of using TypeScript for the scaffold. This decision will be influenced by our goals for type safety and development ease.
+  Vite supports the latest ECMAScript standards, including ES2022. This allows you to use modern JavaScript features such as class static initialization blocks, private instance methods and fields, the `at` method for arrays, public instance fields, top-level `await`, `Object.hasOwn`, and many more. Vite uses ESBuild for [fast transpilation](https://esbuild.github.io/) and Rollup for efficient module bundling and performance optimization. ESBuild ensures compatibility with the latest ECMAScript features for an enhanced development experience.
+
+- [Zendesk Garden](https://garden.zendesk.com/) React UI components
+
+  Collection of React components optimized for Zendesk products, designed to handle a range of user input devices and support right-to-left layouts, with subtle animations for enhanced user experience.
+
+- [Vite](https://vitejs.dev/) with Rollup under the hood
+
+  Vite leverages Rollup as its underlying bundler for fast, efficient module bundling and serving of your web application. It enhances development speed with lightning-fast hot module replacement (HMR) and optimized build performance.
+
+- [PostCSS](https://postcss.org/) stylesheets
+
+  PostCSS transforms your stylesheets using JavaScript plugins, supporting CSS linting, variables, mixins, future syntax transpilation, and image inlining among other features, seamlessly integrated into Vite for enhanced CSS development workflow.
+
+- [Optimized Build](https://vitejs.dev/guide/build.html)
+
+  Vite provides optimized production builds with features like code splitting, tree shaking, and pre-bundling, ensuring fast and efficient deployment of your application.
+
+- [Vitest](https://github.com/vitejs/vitest) JavaScript testing framework
+
+  Vitest, built for Vite, is used for unit and integration testing of your application. It integrates seamlessly with Vite's testing ecosystem, offering efficient and reliable test coverage for your codebase.
+
+## Folder structure
+
+The folder and file structure of the App Scaffold is as follows:
+
+| Name                           | Description                                                                                  |
+| :----------------------------- | :------------------------------------------------------------------------------------------- |
+| [`.github/`](#.github)         | The folder to store PULL_REQUEST_TEMPLATE.md, ISSUE_TEMPLATE.md and CONTRIBUTING.md, etc     |
+| [`dist/`](#dist)               | The folder in which vite packages the built version of your app                              |
+| [`spec/`](#spec)               | The folder in which all of your test files live                                              |
+| [`src/`](#src)                 | The folder in which all of your source JavaScript, CSS, templates and translation files live |
+| [`rollup/`](#src)              | static-copy-plugin and translations-loader-plugin to support i18n in the application         |
+| [`vite.config.js`](#vite)      | Configuration file for vite                                                                  |
+| [`package.json`](#packagejson) | Configuration file for Project metadata, dependencies and build scripts                      |
+
+#### dist
+
+The dist directory is created when you run the app building scripts. You will need to package this folder when submitting your app to the Zendesk Apps Marketplace. It is also the folder you will have to serve when using [ZCLI](https://developer.zendesk.com/documentation/apps/app-developer-guide/zcli/). It includes your app's manifest.json file, an assets folder with all your compiled JavaScript and CSS as well as HTML and images.
+
+#### spec
+
+The spec directory is where all your tests and test helpers live. Tests are not required to submit/upload your app to Zendesk and your test files are not included in your app's package; however, it is good practice to write tests to document functionality and prevent bugs.
+
+#### src
+
+The src directory is where your raw source code lives. The App Scaffold includes different directories for JavaScript, stylesheets, templates, images, and translations. Most of your additions will be in here (and spec, of course!).
+
+#### vite.config.js
+
+`vite.config.js` is the configuration file for [Vite](https://vitejs.dev/). Vite is a fast build tool that leverages ESBuild for transpilation and Rollup for bundling. This file includes configurations for building, testing, and other customizations.
+
+- You can modify ESBuild settings directly within this file to adjust transpilation options. For more information, see the [Vite documentation on ESBuild](https://vitejs.dev/config/#esbuild).
+
+- **Static Copy Plugin**: This plugin is used to copy static assets to the `dist` directory during the build process.
+- **Translations Loader Plugin**: This plugin processes translation files at build time, converting `.json` translation files to JavaScript objects for the app.
+
+#### package.json
+
+package.json is the configuration file for [pnpm](https://pnpm.io/), which is a package manager for JavaScript. This file includes information about your project and its dependencies. For more information on how to configure this file, see [pnpm package.json](https://pnpm.io/package_json).
+
+### I18n
+
+The I18n (internationalization) module in `/src/lib/i18n.js` provides a `t` method to look up translations based on a key. For more information, see [Using the I18n module](https://github.com/zendesk/app_scaffolds/blob/master/packages/react/doc/i18n.md).
+
+## Parameters and Settings
+
+If you need to test your app with a `parameters` section in `dist/manifest.json`, foreman might crash with a message like:
+
+> Would have prompted for a value interactively, but zcli is not listening to keyboard input.
+
+To resolve this problem, set default values for parameters or create a `settings.yml` file in the root directory of your app scaffold-based project, and populate it with your parameter names and test values. For example, using a parameters section like:
+
+```json
+{
+  "parameters": [
+    {
+      "name": "myParameter"
+    }
+  ]
+}
+```
+
+create a `settings.yml` containing:
+
+```yaml
+myParameter: 'some value!'
+```
+
+## Testing
+
+The App Scaffold is currently setup for testing with [Vitetest](https://vitest.dev/). To run specs, open a new terminal and run
+
+```
+pnpm run test
+```
+
+Specs live under the `spec` directory.
+
+## Deploying
+
+To check that your app will pass the server-side validation check, run
+
+```
+zcli apps:validate dist
+```
+
+If validation is successful, you can upload the app into your Zendesk account by running
+
+```
+zcli apps:create dist
+```
+
+To update your app after it has been created in your account, run
+
+```
+zcli apps:update dist
+```
+
+Or, to create a zip archive for manual upload, run
+
+```
+zcli apps:package dist
+```
+
+taking note of the created filename.
+
+For more information on the Zendesk CLI please see the [documentation](https://developer.zendesk.com/documentation/apps/app-developer-guide/zcli/).
+
+## External Dependencies
+
+External dependencies are defined in [webpack.config.js](https://github.com/zendesk/app_scaffolds/blob/master/packages/react/webpack.config.js). This ensures these dependencies are included in your app's `index.html`.
+
+## Contribute
+
+- Put up a PR into the master branch.
+- CC and get a +1 from @zendesk/vegemite.
+
+## Bugs
+
+Submit Issues via [GitHub](https://github.com/zendesk/app_scaffolds/issues/new) or email support@zendesk.com.
+
+## Useful Links
+
+Links to maintaining team, confluence pages, Datadog dashboard, Kibana logs, etc
+
+- https://developer.zendesk.com/
+- https://github.com/zendesk/zendesk_apps_tools
+- https://esbuild.github.io/
+- https://vitejs.dev/
+- https://developer.zendesk.com/documentation/apps/build-an-app/using-react-in-a-support-app/
+
+## Copyright and license
+
+Copyright 2018 Zendesk
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
+
+You may obtain a copy of the License at
+http://www.apache.org/licenses/LICENSE-2.0
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
