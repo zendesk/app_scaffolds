@@ -32,7 +32,7 @@ export default ({ mode }) => {
     ],
     root: 'src',
     test: {
-      include: ['../test/**/*.{test,spec}.{js,ts,jsx}'],
+      include: ['../{test,spec}/**/*.{test,spec}.{js,ts,jsx}'],
       exclude: ['**/node_modules/**', '**/dist/**'],
       globals: true,
       environment: 'jsdom'
