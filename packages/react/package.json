@@ -21,7 +21,7 @@
     "@zendeskgarden/react-typography": "^8.76.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-components": "^6.1.11"
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
     "@testing-library/dom": "^10.1.0",
