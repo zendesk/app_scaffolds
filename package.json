@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "lerna": "^4.0.0"
+    "lerna": "^8.1.5"
   },
   "name": "app_scaffolds",
   "private": true,
