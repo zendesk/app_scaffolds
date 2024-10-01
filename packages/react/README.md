@@ -190,10 +190,6 @@ taking note of the created filename.
 
 For more information on the Zendesk CLI please see the [documentation](https://developer.zendesk.com/documentation/apps/app-developer-guide/zcli/).
 
-## External Dependencies
-
-External dependencies are defined in [webpack.config.js](https://github.com/zendesk/app_scaffolds/blob/master/packages/react/webpack.config.js). This ensures these dependencies are included in your app's `index.html`.
-
 ## Contribute
 
 - Put up a PR into the master branch.
