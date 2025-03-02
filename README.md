@@ -22,7 +22,7 @@ To run your app locally in Zendesk, you need the latest [Zendesk Command Line In
 
 ## Contribute
 * Put up a PR into the master branch.
-* CC and get a +1 from @zendesk/vegemite.
+* CC and get a +1 from @zendesk/wattle.
 
 ## Bugs
 Submit Issues via [GitHub](https://github.com/zendesk/app_scaffolds/issues/new) or email support@zendesk.com.

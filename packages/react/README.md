@@ -193,7 +193,7 @@ For more information on the Zendesk CLI please see the [documentation](https://d
 ## Contribute
 
 - Put up a PR into the master branch.
-- CC and get a +1 from @zendesk/vegemite.
+- CC and get a +1 from @zendesk/wattle.
 
 ## Bugs
 
