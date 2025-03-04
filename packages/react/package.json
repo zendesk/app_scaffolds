@@ -14,11 +14,11 @@
     "start:prod": "zcli apps:server dist"
   },
   "dependencies": {
-    "@zendeskgarden/css-bedrock": "^9.1.1",
-    "@zendeskgarden/react-buttons": "^8.76.3",
-    "@zendeskgarden/react-grid": "^8.76.3",
-    "@zendeskgarden/react-theming": "^8.76.3",
-    "@zendeskgarden/react-typography": "^8.76.3",
+    "@zendeskgarden/css-bedrock": "^10.0.1",
+    "@zendeskgarden/react-buttons": "^9.0.0",
+    "@zendeskgarden/react-grid": "^9.0.0",
+    "@zendeskgarden/react-theming": "^9.0.0",
+    "@zendeskgarden/react-typography": "^9.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^5.3.6"

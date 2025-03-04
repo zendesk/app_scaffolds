@@ -15,20 +15,20 @@ importers:
   packages/react:
     dependencies:
       '@zendeskgarden/css-bedrock':
-        specifier: ^9.1.1
-        version: 9.1.1
+        specifier: ^10.0.1
+        version: 10.0.1
       '@zendeskgarden/react-buttons':
-        specifier: ^8.76.3
-        version: 8.76.3(@zendeskgarden/react-theming@8.76.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1))
+        specifier: ^9.0.0
+        version: 9.0.0(@zendeskgarden/react-theming@9.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1))
       '@zendeskgarden/react-grid':
-        specifier: ^8.76.3
-        version: 8.76.3(@zendeskgarden/react-theming@8.76.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1))
+        specifier: ^9.0.0
+        version: 9.0.0(@zendeskgarden/react-theming@9.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1))
       '@zendeskgarden/react-theming':
-        specifier: ^8.76.3
-        version: 8.76.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1))
+        specifier: ^9.0.0
+        version: 9.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1))
       '@zendeskgarden/react-typography':
-        specifier: ^8.76.3
-        version: 8.76.3(@zendeskgarden/react-theming@8.76.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1))
+        specifier: ^9.0.0
+        version: 9.0.0(@zendeskgarden/react-theming@9.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1))
       react:
         specifier: ^18.2.0
         version: 18.3.1
@@ -370,6 +370,21 @@ packages:
     resolution: {integrity: sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
+  '@floating-ui/core@1.6.8':
+    resolution: {integrity: sha512-7XJ9cPU+yI2QeLS+FCSlqNFZJq8arvswefkZrYI1yQBbftw6FyrZOxYSh+9S7z7TpeWlRt9zJ5IhM1WIL334jA==}
+
+  '@floating-ui/dom@1.6.11':
+    resolution: {integrity: sha512-qkMCxSR24v2vGkhYDo/UzxfJN3D4syqSjyuTFz6C7XcpU1pASPRieNI0Kj5VP3/503mOfYiGY891ugBX1GlABQ==}
+
+  '@floating-ui/react-dom@2.1.2':
+    resolution: {integrity: sha512-06okr5cgPzMNBy+Ycse2A6udMi4bqwW/zgBF/rwjcNqWkyr82Mcg8b0vjX8OJpZFy/FKjJmw6wV7t44kK6kW7A==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+
+  '@floating-ui/utils@0.2.8':
+    resolution: {integrity: sha512-kym7SodPp8/wloecOpcmSnWJsK7M0E5Wg8UcFA+uO4B9s5d0ywXOEro/8HM9x0rW+TljRzul/14UYz3TleT3ig==}
+
   '@humanwhocodes/config-array@0.11.14':
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
     engines: {node: '>=10.10.0'}
@@ -386,12 +401,6 @@ packages:
   '@hutson/parse-repository-url@3.0.2':
     resolution: {integrity: sha512-H9XAx3hc0BQHY6l+IFSWHDySypcXsvsuLhgYLUGywmJ5pswRVQJUHpOsobnLYp2ZUaUlKiKDrgWWhosOwAEM8Q==}
     engines: {node: '>=6.9.0'}
-
-  '@hypnosphi/create-react-context@0.3.1':
-    resolution: {integrity: sha512-V1klUed202XahrWJLLOT3EXNeCpFHCcJntdFGI15ntCwau+jfT386w7OFTMaCqOgXUH1fa0w/I1oZs+i/Rfr0A==}
-    peerDependencies:
-      prop-types: ^15.0.0
-      react: '>=0.14.0'
 
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
@@ -842,23 +851,9 @@ packages:
     resolution: {integrity: sha512-aiATs7pSutzda/rq8fnuPwTglyVwjM22bNnK2ZgjrpAjQHSSl3lztd2f9evst1W/qnC58DRz7T7QndUDumAR4Q==}
     engines: {node: '>=14.15.0'}
 
-  '@zendeskgarden/container-focusvisible@2.0.3':
-    resolution: {integrity: sha512-uG/02EUaiViZHzNOo786dNacBTwkXZz7M13GzGnwTftkrLiKerYp45xtNJVdgdSlawwhnyohQ4s3Qkcg/3iqYg==}
-    peerDependencies:
-      prop-types: ^15.6.1
-      react: '>=16.8.0'
-      react-dom: '>=16.8.0'
-
   '@zendeskgarden/container-scrollregion@1.0.9':
     resolution: {integrity: sha512-tzUCPzDUFIFHbb858/mGwB1OR5jt/mYlRPnYC2yCtvwYb2aJVKsllx5OLldJ+ZYrfv889EYcjPIoFpn+2tQ9pQ==}
     peerDependencies:
-      react: '>=16.8.0'
-      react-dom: '>=16.8.0'
-
-  '@zendeskgarden/container-selection@3.0.9':
-    resolution: {integrity: sha512-SQrRVgaEywZYgKT5/s9cAbUQK2c1zP0Dmjb/k03G2UKF8z0j4kZSK2sF1VedQXHIT4gDxEWNyjspJ9Z+3Kp4IA==}
-    peerDependencies:
-      prop-types: ^15.6.1
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
 
@@ -882,50 +877,47 @@ packages:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
 
-  '@zendeskgarden/css-bedrock@9.1.1':
-    resolution: {integrity: sha512-dDpHPDJ2jRCVoRaImbLyX8WMSIHLoFCQKVZppfhgKWlTYx1x+3ytqFkkSWV3b0csf/dUXhw2efqF7Q+vQgtbeQ==}
+  '@zendeskgarden/css-bedrock@10.0.1':
+    resolution: {integrity: sha512-S1Oo9tkZLzEuzMLICF/0SulSjqNxhs39fcGK0DqAhILTSogcJkVRYgvgAN70bTqlozycNju1TiWTjeEljMdfvg==}
 
-  '@zendeskgarden/css-variables@6.4.6':
-    resolution: {integrity: sha512-jx5N3Vn4zHNWwZnkCFkk5VpXKB5404h/mcCR2Y7HR8XwSH5nfUugwsH/5AyPOng/atyHz3XNORuuEJ0mZ/vi5w==}
-
-  '@zendeskgarden/react-buttons@8.76.3':
-    resolution: {integrity: sha512-Kwam1JJFx56vyUUrDmxudEmuc6wPnPoNg/EhIHmiwdLgAvcmFeifw9NdjM1JOikK7jxBeFeAFd2lEHw93pp6bQ==}
+  '@zendeskgarden/react-buttons@9.0.0':
+    resolution: {integrity: sha512-Tapo8eiYsaU2nok4TttmN7S0i/1ijX0LD9itFGhdR3n9QWIe5MBckq+0ZyMHGtUR4vowsCRniytWYoqZCOG/hQ==}
     peerDependencies:
-      '@zendeskgarden/react-theming': ^8.75.0
-      react: '>=16.8.0'
-      react-dom: '>=16.8.0'
-      styled-components: ^4.2.0 || ^5.0.0
+      '@zendeskgarden/react-theming': '>=9.0.0-next'
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+      styled-components: ^5.3.1
 
-  '@zendeskgarden/react-grid@8.76.3':
-    resolution: {integrity: sha512-ZkJmC7EY9Qm2juP963tHIJs9Gc47YgJAAMnf1lF3mELYKvRJcoVBOFi42Ra2amnFZmoCuxkaBQ63d3vqTs1F1A==}
+  '@zendeskgarden/react-grid@9.0.0':
+    resolution: {integrity: sha512-f1XI2HS+8prtCAN1bbYO729eNxpDwMTh6x5VSexV2rx7h8BykkusHcuEgMSDckOuIomgno4UHMjIfNLPjv1ZTQ==}
     peerDependencies:
-      '@zendeskgarden/react-theming': ^8.75.0
-      react: '>=16.8.0'
-      react-dom: '>=16.8.0'
-      styled-components: ^4.2.0 || ^5.0.0
+      '@zendeskgarden/react-theming': '>=9.0.0-next'
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+      styled-components: ^5.3.1
 
-  '@zendeskgarden/react-theming@8.76.3':
-    resolution: {integrity: sha512-Fqvjkp+diJyeTVxs3UinOQL6eUkHdcscc5EASHPl9JXm5BVoNbQnBDEMbyIXw2iz79AoW0b1K7Rq+eaLxKqUbQ==}
+  '@zendeskgarden/react-theming@9.0.0':
+    resolution: {integrity: sha512-rA1b9rleUdyehJcbbmJMLbA1UYaOlYoRltdNNDGYKg0RUX+1ti+9SQr857tt/Qj84hPdu38KykzRHsPTM1FRJg==}
     peerDependencies:
-      react: '>=16.8.0'
-      react-dom: '>=16.8.0'
-      styled-components: ^4.2.0 || ^5.0.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+      styled-components: ^4.2.0 || ^5.3.1
 
-  '@zendeskgarden/react-tooltips@8.76.3':
-    resolution: {integrity: sha512-KXVfPsDVTJndNphwjBH4L7CB0ANHRtdwOcwaTmDXYzOSNvMs4mM//jZlPDwRqQSf2ZhtbUeJMOOJnukijNDfHA==}
+  '@zendeskgarden/react-tooltips@9.0.0':
+    resolution: {integrity: sha512-rViVaTp5jgILALvhW0xlb6hkeRcqRRxMFMyGEmLQLjLvXHY5nUgXfI935FNnMp/8ydGqNRHVYDg/+M7QI0hjOw==}
     peerDependencies:
-      '@zendeskgarden/react-theming': ^8.75.0
-      react: '>=16.8.0'
-      react-dom: '>=16.8.0'
-      styled-components: ^4.2.0 || ^5.0.0
+      '@zendeskgarden/react-theming': '>=9.0.0-next'
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+      styled-components: ^5.3.1
 
-  '@zendeskgarden/react-typography@8.76.3':
-    resolution: {integrity: sha512-W+QXhtNkXGtdl5ZxEnoj9RHqDrtmQaX9/LKZG2TebVmhY1dulmkk4kUKfIsXSJEfAGG0L6SUI3q7eF87DUOAng==}
+  '@zendeskgarden/react-typography@9.0.0':
+    resolution: {integrity: sha512-KUungnM5RerrbSmeChvhYGTlSpnb5sOepTlTOMLlz35IYMoG6imZ4rrykc/0H4CGBIpIYo8bh8vRvO86sNL01g==}
     peerDependencies:
-      '@zendeskgarden/react-theming': ^8.75.0
-      react: '>=16.8.0'
-      react-dom: '>=16.8.0'
-      styled-components: ^4.2.0 || ^5.0.0
+      '@zendeskgarden/react-theming': '>=9.0.0-next'
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+      styled-components: ^5.3.1
 
   '@zkochan/js-yaml@0.0.7':
     resolution: {integrity: sha512-nrUSn7hzt7J6JWgWGz78ZYI8wj+gdIJdk0Ynjpp8l+trkn58Uqsf6RYrYkEK+3X18EX+TNdtJI0WxAtc+L84SQ==}
@@ -1254,6 +1246,9 @@ packages:
     resolution: {integrity: sha512-qiBjkpbMLO/HL68y+lh4q0/O1MZFj2RX6X/KmMa3+gJD3z+WwI1ZzDHysvqHGS3mP6mznPckpXmw1nI9cJjyRg==}
     hasBin: true
 
+  color2k@2.0.3:
+    resolution: {integrity: sha512-zW190nQTIoXcGCaU08DvVNFTmQhUpnJfVuAKfWqUQkflXKpaDdpaYoM0iluLS9lgJNHyBF58KKA2FBEwkD7wog==}
+
   columnify@1.6.0:
     resolution: {integrity: sha512-lomjuFZKfM6MSAnV9aCZC9sc0qGbmZdfygNv+nCpqVkSKdCxCklLtd16O0EILGkImHw9ZpHkAnHaB+8Zxq5W6Q==}
     engines: {node: '>=8.0.0'}
@@ -1409,10 +1404,6 @@ packages:
   deep-eql@4.1.4:
     resolution: {integrity: sha512-SUwdGfqdKOwxCPeVYjwSyRpJ7Z+fhpwIAtmCUdZIWZ/YP5R9WAsyuSgpLVDi9bjWoN2LXHNss/dk3urXtdQxGg==}
     engines: {node: '>=6'}
-
-  deep-equal@1.1.2:
-    resolution: {integrity: sha512-5tdhKF6DbU7iIzrIOa1AOUt39ZRm13cmL1cGEh//aqR8x9+tNfbywRf0n5FD/18OKMdo7DNEtrX2t22ZAkI+eg==}
-    engines: {node: '>= 0.4'}
 
   deep-is@0.1.4:
     resolution: {integrity: sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==}
@@ -1937,9 +1928,6 @@ packages:
   graphemer@1.4.0:
     resolution: {integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==}
 
-  gud@1.0.0:
-    resolution: {integrity: sha512-zGEOVKFM5sVPPrYs7J5/hYEw2Pof8KCyOwyhG8sAF26mCAeUFAcYPu1mwB7hhpIP29zOIBaDqwuHdLp0jvZXjw==}
-
   handlebars@4.7.8:
     resolution: {integrity: sha512-vafaFqs8MZkRrSX7sFVUdo3ap/eNiLnb4IakshzvP56X5Nr1iGKAIqdX6tMlm6HcNRIkr6AxO5jFEoJzzpT8aQ==}
     engines: {node: '>=0.4.7'}
@@ -2080,10 +2068,6 @@ packages:
   ip-address@9.0.5:
     resolution: {integrity: sha512-zHtQzGojZXTwZTHQqra+ETKd4Sn3vgi7uBmlPoXVWZqYvuKmtI0l/VZTjqGmJY9x88GGOaZ9+G9ES8hC4T4X8g==}
     engines: {node: '>= 12'}
-
-  is-arguments@1.1.1:
-    resolution: {integrity: sha512-8Q7EARjzEnKpt/PCD7e1cgUS0a6X8u5tdSiMqXhojOdoV9TsMsiO+9VLC5vAmO8N7/GmXn7yjR8qnA6bVAEzfA==}
-    engines: {node: '>= 0.4'}
 
   is-array-buffer@3.0.4:
     resolution: {integrity: sha512-wcjaerHw0ydZwfhiKbXJWLDY8A7yV7KhjQOpb83hGgGfId/aQa4TOvwyzn2PuswW2gPCYEL/nEAiSVpdOj1lXw==}
@@ -2435,6 +2419,9 @@ packages:
   lodash.debounce@4.0.8:
     resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
 
+  lodash.get@4.4.2:
+    resolution: {integrity: sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==}
+
   lodash.ismatch@4.4.0:
     resolution: {integrity: sha512-fPMfXjGQEV9Xsq/8MTSgUf255gawYRbjwMyDbcvDhXgV7enSZA0hynz6vMPnpAb5iONEzBHBPsT+0zes5Z301g==}
 
@@ -2608,8 +2595,8 @@ packages:
   mlly@1.7.1:
     resolution: {integrity: sha512-rrVRZRELyQzrIUAVMHxP97kv+G786pHmOKzuFII8zDYahFBS7qnHh2AlYSl1GAHhaMPCz6/oHjVMcfFYgFYHgA==}
 
-  modern-normalize@2.0.0:
-    resolution: {integrity: sha512-CxBoEVKh5U4DH3XuNbc5ONLF6dQBc8dSc7pdZ1957FGbIO5JBqGqqchhET9dTexri8/pk9xBL6+5ceOtCIp1QA==}
+  modern-normalize@3.0.1:
+    resolution: {integrity: sha512-VqlMdYi59Uch6fnUPxnpijWUQe+TW6zeWCvyr6Mb7JibheHzSuAAoJi2c71ZwIaWKpECpGpYHoaaBp6rBRr+/g==}
     engines: {node: '>=6'}
 
   modify-values@1.0.1:
@@ -2741,10 +2728,6 @@ packages:
 
   object-inspect@1.13.2:
     resolution: {integrity: sha512-IRZSRuzJiynemAXPYtPe5BoI/RESNYR7TYm50MC5Mqbd3Jmw5y790sErYw3V6SryFJD64b74qQQs9wn5Bg/k3g==}
-    engines: {node: '>= 0.4'}
-
-  object-is@1.1.6:
-    resolution: {integrity: sha512-F8cZ+KfGlSGi09lJT7/Nd6KJZ9ygtvYC0/UYYLI9nmQKLMnydpB9yvbv9K1uSkEu7FU9vYPmVwLg328tX+ot3Q==}
     engines: {node: '>= 0.4'}
 
   object-keys@1.1.1:
@@ -2982,10 +2965,6 @@ packages:
     resolution: {integrity: sha512-OBatVyC/N7SCW/FaDHrSd+vn0o5cS855TOmYi4OkdWUMSJCET/xip//ch8xGUvtr3i44X9LVyWwQlRMTN3pwSA==}
     engines: {node: '>=10'}
 
-  popper.js@1.16.1:
-    resolution: {integrity: sha512-Wb4p1J4zyFTbM+u6WuO4XstYx4Ky9Cewe4DWrel7B0w6VVICvPwdOpotjzcf6eD8TsckVnIMNONQyPIUFOUbCQ==}
-    deprecated: You can find the new Popper v2 at @popperjs/core, this package is dedicated to the legacy v1
-
   possible-typed-array-names@1.0.0:
     resolution: {integrity: sha512-d7Uw+eZoloe0EHDIYoe+bQ5WXnGMOpmiZFTuMWCwpjzzkL2nTjcKiAk4hh8TjnGye2TwWOk3UXucZ+3rbmBa8Q==}
     engines: {node: '>= 0.4'}
@@ -3100,13 +3079,8 @@ packages:
   react-is@18.3.1:
     resolution: {integrity: sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==}
 
-  react-merge-refs@1.1.0:
-    resolution: {integrity: sha512-alTKsjEL0dKH/ru1Iyn7vliS2QRcBp9zZPGoWxUOvRGWPUYgjo+V01is7p04It6KhgrzhJGnIj9GgX8W4bZoCQ==}
-
-  react-popper@1.3.11:
-    resolution: {integrity: sha512-VSA/bS+pSndSF2fiasHK/PTEEAyOpX60+H5EPAjoArr8JGm+oihu4UbrqcEBpQibJxBVCpYyjAX7abJ+7DoYVg==}
-    peerDependencies:
-      react: 0.14.x || ^15.0.0 || ^16.0.0 || ^17.0.0
+  react-merge-refs@2.1.1:
+    resolution: {integrity: sha512-jLQXJ/URln51zskhgppGJ2ub7b2WFKGq3cl3NYKtlHoTG+dN2q7EzWrn3hN3EgPsTMvpR9tpq5ijdp7YwFZkag==}
 
   react-refresh@0.14.2:
     resolution: {integrity: sha512-jCvmsr+1IUSMUyzOkRcvnVbX3ZYC6g9TDrDbFuFmRDq7PD4yaGbLKNQL6k2jnArV8hjYxh7hVhAZB6s9HDGpZA==}
@@ -3617,9 +3591,6 @@ packages:
     resolution: {integrity: sha512-/OxDN6OtAk5KBpGb28T+HZc2M+ADtvRxXrKKbUwtsLgdoxgX13hyy7ek6bFRl5+aBs2yZzB0c4CnQfAtVypW/g==}
     engines: {node: '>= 0.4'}
 
-  typed-styles@0.0.7:
-    resolution: {integrity: sha512-pzP0PWoZUhsECYjABgCGQlRGL1n7tOHsgwYv3oIiEpJwGhFTuty/YNeduxQYzXXa3Ge5BdT6sHYIQYpl4uJ+5Q==}
-
   typedarray@0.0.6:
     resolution: {integrity: sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==}
 
@@ -3758,9 +3729,6 @@ packages:
 
   walk-up-path@3.0.1:
     resolution: {integrity: sha512-9YlCL/ynK3CTlrSRrDxZvUauLzAswPCrsaCgilqFevUYpeEW0/3ScEjaa3kbW/T0ghhkEr7mv+fpjqn1Y1YuTA==}
-
-  warning@4.0.3:
-    resolution: {integrity: sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==}
 
   wcwidth@1.0.1:
     resolution: {integrity: sha512-XHPEwS0q6TaxcvG85+8EYkbiCux2XtWG2mkc47Ng2A77BQu9+DqIOJldST4HgPkuea7dvKSj5VgX3P1d4rW8Tg==}
@@ -4181,6 +4149,23 @@ snapshots:
 
   '@eslint/js@8.57.0': {}
 
+  '@floating-ui/core@1.6.8':
+    dependencies:
+      '@floating-ui/utils': 0.2.8
+
+  '@floating-ui/dom@1.6.11':
+    dependencies:
+      '@floating-ui/core': 1.6.8
+      '@floating-ui/utils': 0.2.8
+
+  '@floating-ui/react-dom@2.1.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@floating-ui/dom': 1.6.11
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
+  '@floating-ui/utils@0.2.8': {}
+
   '@humanwhocodes/config-array@0.11.14':
     dependencies:
       '@humanwhocodes/object-schema': 2.0.3
@@ -4194,13 +4179,6 @@ snapshots:
   '@humanwhocodes/object-schema@2.0.3': {}
 
   '@hutson/parse-repository-url@3.0.2': {}
-
-  '@hypnosphi/create-react-context@0.3.1(prop-types@15.8.1)(react@18.3.1)':
-    dependencies:
-      gud: 1.0.0
-      prop-types: 15.8.1
-      react: 18.3.1
-      warning: 4.0.3
 
   '@isaacs/cliui@8.0.2':
     dependencies:
@@ -4802,25 +4780,10 @@ snapshots:
       js-yaml: 3.14.1
       tslib: 2.6.3
 
-  '@zendeskgarden/container-focusvisible@2.0.3(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
-    dependencies:
-      '@babel/runtime': 7.24.7
-      prop-types: 15.8.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-
   '@zendeskgarden/container-scrollregion@1.0.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.24.7
       lodash.debounce: 4.0.8
-      prop-types: 15.8.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-
-  '@zendeskgarden/container-selection@3.0.9(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
-    dependencies:
-      '@babel/runtime': 7.24.7
-      '@zendeskgarden/container-utilities': 2.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       prop-types: 15.8.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
@@ -4851,46 +4814,43 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@zendeskgarden/css-bedrock@9.1.1':
+  '@zendeskgarden/css-bedrock@10.0.1':
     dependencies:
-      '@zendeskgarden/css-variables': 6.4.6
-      modern-normalize: 2.0.0
+      modern-normalize: 3.0.1
 
-  '@zendeskgarden/css-variables@6.4.6': {}
-
-  '@zendeskgarden/react-buttons@8.76.3(@zendeskgarden/react-theming@8.76.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1))':
+  '@zendeskgarden/react-buttons@9.0.0(@zendeskgarden/react-theming@9.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1))':
     dependencies:
-      '@zendeskgarden/container-selection': 3.0.9(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@zendeskgarden/container-utilities': 2.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@zendeskgarden/react-theming': 8.76.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1))
+      '@zendeskgarden/react-theming': 9.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1))
       polished: 4.3.1
       prop-types: 15.8.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
-      react-merge-refs: 1.1.0
+      react-merge-refs: 2.1.1
       styled-components: 5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)
 
-  '@zendeskgarden/react-grid@8.76.3(@zendeskgarden/react-theming@8.76.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1))':
+  '@zendeskgarden/react-grid@9.0.0(@zendeskgarden/react-theming@9.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1))':
     dependencies:
       '@zendeskgarden/container-splitter': 2.0.17(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@zendeskgarden/container-utilities': 2.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@zendeskgarden/react-buttons': 8.76.3(@zendeskgarden/react-theming@8.76.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1))
-      '@zendeskgarden/react-theming': 8.76.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1))
-      '@zendeskgarden/react-tooltips': 8.76.3(@zendeskgarden/react-theming@8.76.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1))
+      '@zendeskgarden/react-buttons': 9.0.0(@zendeskgarden/react-theming@9.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1))
+      '@zendeskgarden/react-theming': 9.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1))
+      '@zendeskgarden/react-tooltips': 9.0.0(@zendeskgarden/react-theming@9.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1))
       polished: 4.3.1
       prop-types: 15.8.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
-      react-merge-refs: 1.1.0
+      react-merge-refs: 2.1.1
       styled-components: 5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)
       use-resize-observer: 9.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     transitivePeerDependencies:
       - '@types/react'
 
-  '@zendeskgarden/react-theming@8.76.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1))':
+  '@zendeskgarden/react-theming@9.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1))':
     dependencies:
-      '@zendeskgarden/container-focusvisible': 2.0.3(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@zendeskgarden/container-utilities': 2.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@floating-ui/react-dom': 2.1.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      color2k: 2.0.3
+      lodash.get: 4.4.2
       lodash.memoize: 4.1.2
       polished: 4.3.1
       prop-types: 15.8.1
@@ -4898,25 +4858,25 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
       styled-components: 5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)
 
-  '@zendeskgarden/react-tooltips@8.76.3(@zendeskgarden/react-theming@8.76.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1))':
+  '@zendeskgarden/react-tooltips@9.0.0(@zendeskgarden/react-theming@9.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1))':
     dependencies:
+      '@floating-ui/react-dom': 2.1.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@zendeskgarden/container-tooltip': 1.0.16(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@zendeskgarden/container-utilities': 2.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@zendeskgarden/react-theming': 8.76.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1))
+      '@zendeskgarden/react-theming': 9.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1))
       polished: 4.3.1
       prop-types: 15.8.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
-      react-merge-refs: 1.1.0
-      react-popper: 1.3.11(react@18.3.1)
+      react-merge-refs: 2.1.1
       styled-components: 5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)
     transitivePeerDependencies:
       - '@types/react'
 
-  '@zendeskgarden/react-typography@8.76.3(@zendeskgarden/react-theming@8.76.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1))':
+  '@zendeskgarden/react-typography@9.0.0(@zendeskgarden/react-theming@9.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1))':
     dependencies:
       '@zendeskgarden/container-scrollregion': 1.0.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@zendeskgarden/react-theming': 8.76.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1))
+      '@zendeskgarden/react-theming': 9.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1))
       polished: 4.3.1
       prism-react-renderer: 1.3.5(react@18.3.1)
       prop-types: 15.8.1
@@ -5290,6 +5250,8 @@ snapshots:
 
   color-support@1.1.3: {}
 
+  color2k@2.0.3: {}
+
   columnify@1.6.0:
     dependencies:
       strip-ansi: 6.0.1
@@ -5455,15 +5417,6 @@ snapshots:
   deep-eql@4.1.4:
     dependencies:
       type-detect: 4.0.8
-
-  deep-equal@1.1.2:
-    dependencies:
-      is-arguments: 1.1.1
-      is-date-object: 1.0.5
-      is-regex: 1.1.4
-      object-is: 1.1.6
-      object-keys: 1.1.1
-      regexp.prototype.flags: 1.5.2
 
   deep-is@0.1.4: {}
 
@@ -6136,8 +6089,6 @@ snapshots:
 
   graphemer@1.4.0: {}
 
-  gud@1.0.0: {}
-
   handlebars@4.7.8:
     dependencies:
       minimist: 1.2.8
@@ -6290,11 +6241,6 @@ snapshots:
     dependencies:
       jsbn: 1.1.0
       sprintf-js: 1.1.3
-
-  is-arguments@1.1.1:
-    dependencies:
-      call-bind: 1.0.7
-      has-tostringtag: 1.0.2
 
   is-array-buffer@3.0.4:
     dependencies:
@@ -6723,6 +6669,8 @@ snapshots:
 
   lodash.debounce@4.0.8: {}
 
+  lodash.get@4.4.2: {}
+
   lodash.ismatch@4.4.0: {}
 
   lodash.memoize@4.1.2: {}
@@ -6905,7 +6853,7 @@ snapshots:
       pkg-types: 1.1.1
       ufo: 1.5.3
 
-  modern-normalize@2.0.0: {}
+  modern-normalize@3.0.1: {}
 
   modify-values@1.0.1: {}
 
@@ -7086,11 +7034,6 @@ snapshots:
   object-assign@4.1.1: {}
 
   object-inspect@1.13.2: {}
-
-  object-is@1.1.6:
-    dependencies:
-      call-bind: 1.0.7
-      define-properties: 1.2.1
 
   object-keys@1.1.1: {}
 
@@ -7353,8 +7296,6 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.24.7
 
-  popper.js@1.16.1: {}
-
   possible-typed-array-names@1.0.0: {}
 
   postcss-selector-parser@6.1.0:
@@ -7445,18 +7386,7 @@ snapshots:
 
   react-is@18.3.1: {}
 
-  react-merge-refs@1.1.0: {}
-
-  react-popper@1.3.11(react@18.3.1):
-    dependencies:
-      '@babel/runtime': 7.24.7
-      '@hypnosphi/create-react-context': 0.3.1(prop-types@15.8.1)(react@18.3.1)
-      deep-equal: 1.1.2
-      popper.js: 1.16.1
-      prop-types: 15.8.1
-      react: 18.3.1
-      typed-styles: 0.0.7
-      warning: 4.0.3
+  react-merge-refs@2.1.1: {}
 
   react-refresh@0.14.2: {}
 
@@ -8023,8 +7953,6 @@ snapshots:
       is-typed-array: 1.1.13
       possible-typed-array-names: 1.0.0
 
-  typed-styles@0.0.7: {}
-
   typedarray@0.0.6: {}
 
   typescript@5.5.2: {}
@@ -8152,10 +8080,6 @@ snapshots:
       xml-name-validator: 5.0.0
 
   walk-up-path@3.0.1: {}
-
-  warning@4.0.3:
-    dependencies:
-      loose-envify: 1.4.0
 
   wcwidth@1.0.1:
     dependencies:
