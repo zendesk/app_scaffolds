@@ -36,8 +36,16 @@ class I18n {
     const keyType = typeof key
     if (keyType !== 'string') throw new Error(`Translation key must be a string, got: ${keyType}`)
 
-    const template = this.translations[key]
-    if (!template) throw new Error(`Missing translation: ${key}`)
+    // Split the key into parts to support nested keys
+    const keyParts = key.split('.')
+    let template = this.translations
+
+    // Traverse the translations object to get the final value
+    for (const part of keyParts) {
+      template = template[part]
+      if (!template) throw new Error(`Missing translation: ${key}`)
+    }
+
     if (typeof template !== 'string') throw new Error(`Invalid translation for key: ${key}`)
 
     return template.replace(/{{(.*?)}}/g, (_, match) => context[match] || '')
