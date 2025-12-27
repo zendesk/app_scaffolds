@@ -13,6 +13,8 @@ export default function StaticCopy({ targets }) {
       const rootPath = config.build.outDir
       await Promise.all(
         targets.map(async ({ src, dest, modifier = (data) => data }) => {
+          // This is to compensate for windows file paths and how glob works
+          src = src.replaceAll("\\", "/")
           const paths = await glob(src)
           const destinationPath = path.resolve(rootPath, dest)
           await processFiles(paths, destinationPath, modifier)

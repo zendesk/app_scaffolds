@@ -27,7 +27,8 @@ export default function TranslationsLoader() {
   return {
     name: 'translations-loader',
     transform: async (_, id) => {
-      if (id.endsWith('.json') && id.includes(path.resolve(__dirname, '../src/translations'))) {
+      // The replaceAll is to compensate for windows file paths having backslashes instead of forward slashes
+      if (id.endsWith('.json') && id.includes(path.resolve(__dirname, '../src/translations').replaceAll("\\", "/"))) {
         const contentFile = await fs.readFile(id)
 
         const translations = JSON.parse(contentFile)
